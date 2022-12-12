@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+
+<title>Music Player</title>
+
+<meta charset="utf-8">
+<!--アイコン-->
+<link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/929992251327787012/1051486784548253706/109_20221211221254.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://media.discordapp.net/attachments/929992251327787012/1051486784548253706/109_20221211221254.jpg">
+
+<!--mp3追加方法
+dropboxのURLを、`https://dl.dropboxusercontent.com/s/ID/ファイル名.mp3`に変更する
+-->
+
+
+<style>
+.btn1{
+font-size: 100px; font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo UI',sans-serif;
+}
+
+.btn2{
+font-size: 50px; font-family: 'ヒラギノ角ゴシック;
+}
+
+
+</style>
+</head>
+<body>
+
+<div id="str">
+
+<p class="btn2">音声を選択する</p>
+
+<p><select id="Listid" class="btn2">
+<option value="https://www.dnc.ac.jp/albums/67/abm00000866.mp3">2022本試</option>
+<option value="https://www.dnc.ac.jp/albums/90/abm00001402.mp3">2021本試</option>
+<option value="https://dl.dropboxusercontent.com/s/tqf2nedqvem350w/%E7%AC%AC%E4%B8%80%E5%9B%9E.mp3">代ゼミ1</option>
+<option value="https://dl.dropboxusercontent.com/s/vk5bgtw4jqjysum/%E4%BB%A3%E3%82%BC%E3%83%9F%E5%85%B1%E3%83%86%E3%83%AA%E3%82%B9%E3%83%8B%E3%83%B3%E3%82%B0%E7%AC%AC%E4%BA%8C%E5%9B%9E.mp3">代ゼミ2</option>
+</select></p>
+
+<button
+onclick="playMusic() ;Kabe();Hihy(1)">
+<div class="btn1">再生する</div>
+</button>
+
+<p class="btn2">端末の音声を再生する</p>
+<br>
+<p>
+<button>
+  <input type="file" id="audioFile">
+</button>
+</p>
+
+<button onclick="playFile() ;
+Kabe();Hihy(1)"> <div class="btn1">再生する</div> </button>
+
+
+</div>
+
+<script>
+
+
+    function playMusic() {
+
+    var levelValue = document.getElementById("Listid").value;
+
+      var audio = new Audio(levelValue)
+      audio.play();
+}
+
+
+    function playFile() {
+  var audioFile = document.getElementById('audioFile').files[0];
+  var audioElement = new Audio(URL.createObjectURL(audioFile));
+  audioElement.play();
+}
+
+
+
+    function Kabe() {
+      document.body.style.backgroundImage = 'url(https://media.discordapp.net/attachments/929992251327787012/1051278288783429692/108_20221211082428.jpg)';
+
+}
+
+    function Hihy(num)
+{
+  if (num == 0)
+  {
+    document.getElementById("str").style.display="block";
+  }
+  else
+  {
+    document.getElementById("str").style.display="none";
+  }
+}
+
+
+</script>
+
+</body>
+</html>
