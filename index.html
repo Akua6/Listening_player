@@ -30,6 +30,11 @@ font-size: 50px; font-family: 'ヒラギノ角ゴシック;
 
 <div id="str">
 
+<button
+onclick="playAdj() ;">
+<div class="btn1">調整用音声を再生する</div>
+</button>
+
 <p class="btn2">音声を選択する</p>
 
 <p><select id="Listid" class="btn2">
@@ -61,7 +66,14 @@ Kabe();Hihy(1)"> <div class="btn1">再生する</div> </button>
 
 </div>
 
-<script>
+<script> 
+
+    function playAdj() {
+
+      var audio = new Audio("https://akahon.net/kte/sound/files/audio/audio.mp3")
+      audio.play();
+}
+
 
 
     function playMusic() {
